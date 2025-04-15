@@ -18,6 +18,7 @@
 
     <modules>
         <module>User</module>
+        <module>BookingService</module>
     </modules>
 
     <properties>
