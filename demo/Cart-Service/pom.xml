@@ -4,7 +4,6 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- Parent POM reference -->
 	<parent>
 		<groupId>com.example</groupId>
 		<artifactId>demo</artifactId>
@@ -26,6 +25,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<!-- Spring Cloud OpenFeign (Mandatory) -->
 		<dependency>

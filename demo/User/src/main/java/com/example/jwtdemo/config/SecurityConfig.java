@@ -4,6 +4,7 @@ import com.example.jwtdemo.security.JwtUtils;
 import com.example.jwtdemo.security.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -42,7 +43,10 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/test/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/books/**").permitAll() // Allow public read access
+                        .requestMatchers(HttpMethod.POST, "/api/books").hasRole("ADMIN") // Only ADMIN can create
+                        .requestMatchers(HttpMethod.PUT, "/api/books/**").hasRole("ADMIN") // Only ADMIN can update
+                        .requestMatchers(HttpMethod.DELETE, "/api/books/**").hasRole("ADMIN") // Only ADMIN can delete
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
