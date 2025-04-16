@@ -13,7 +13,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>BookingService</artifactId>
+    <artifactId>book-service</artifactId>
     <name>BookingService</name>
     <description>Booking Service Application</description>
 

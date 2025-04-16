@@ -20,9 +20,9 @@
 
     <modules>
         <module>User</module>
-        <module>BookingService</module>
-        <module>DiscoveryServerApplication</module>
-        <module>Cart-Service</module>
+        <module>book-service</module>
+        <module>Discovery-client</module>
+        <module>cart-service</module>
         <module>Order-Service</module>
         <module>API-Gateway</module>
         <module>Notification-Service</module>

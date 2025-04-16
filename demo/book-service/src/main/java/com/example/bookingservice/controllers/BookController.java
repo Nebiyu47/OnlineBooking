@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/books")  // Added leading slash
+@RequestMapping("/books")  // Added leading slash
 @RequiredArgsConstructor
 public class BookController {
 
