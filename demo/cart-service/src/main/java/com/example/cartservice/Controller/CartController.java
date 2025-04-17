@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class CartController {
     private final CarServices carServices;
 
-    @GetMapping("/userId")
+    @GetMapping("/{userId}")
     public ResponseEntity<Cart> getCart(@PathVariable Long userId){
         return ResponseEntity.ok(carServices.getCartByUserId(userId));
     }

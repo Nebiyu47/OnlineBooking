@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient (name = "cart-service", url="${cart.service.url}")
+@FeignClient (name = "cart-service")
 public interface CartServiceClient {
-    @GetMapping ("/api/cart/{userId}")
+    @GetMapping ("/cart/{userId}")
     CartDTO getCart(@PathVariable Long userId);
-    @DeleteMapping("/{userId}/clear")
+    @DeleteMapping("/cart/{userId}/clear")
     void clearCart(@PathVariable Long userId);
 
 }

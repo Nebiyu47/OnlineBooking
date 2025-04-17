@@ -1,5 +1,6 @@
 package com.example.orderservice.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,6 +26,7 @@ public class Order {
    private Double TotalAmount;
    private String status;
    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL,orphanRemoval = true)
+   @JsonManagedReference
     private List<OrderItem> items= new ArrayList<>();
    @PrePersist
     protected void onCreate(){

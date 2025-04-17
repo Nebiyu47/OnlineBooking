@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(name="book-service")
 public interface BookServiceClient {
-    @GetMapping("/api/books/{id}")
+    @GetMapping("/books/{id}")
     BookDto getBookById(@PathVariable Long id);
     @PutMapping("/api/books/{id}/stock")
     void updateStock(@PathVariable Long id, @RequestParam int quantity);
